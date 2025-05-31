@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.tpprojet.entities.Equipe;
 import tn.esprit.tpprojet.entities.Projet;
+import tn.esprit.tpprojet.entities.ProjetDetail;
 import tn.esprit.tpprojet.services.IEquipeService;
 import tn.esprit.tpprojet.services.IProjetService;
 
@@ -59,5 +60,20 @@ public class ProjetController {
     Projet desaffecterProjetDetail(@PathVariable Long projetId) {
          return projetService.DesaffecterProjetDetailFromProjet(projetId);
 
+    }
+
+    @GetMapping("/findByDetailProjetTechnologie/technologie")
+    List<Projet> findByDetailProjetTechnologie(@RequestParam String technologie) {
+        return projetService.findByProjetDetailTechnologieLike(technologie);
+    }
+
+    @GetMapping("/finfByEquipe/{id_equipe}")
+    List<Projet> finfByEquipe(@PathVariable long id_equipe) {
+        return projetService.findByEquipe(id_equipe);
+    }
+
+    @GetMapping("/findBycoutAndTechnologie/{cout}/{technologie}")
+    List<Projet>findByCoutAndTechnologie(@PathVariable Long cout, @PathVariable String technologie) {
+        return projetService.findByCoutAndTechnologie(cout, technologie);
     }
 }

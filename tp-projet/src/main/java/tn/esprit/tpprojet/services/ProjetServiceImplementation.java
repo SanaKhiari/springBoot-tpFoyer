@@ -76,5 +76,20 @@ public class ProjetServiceImplementation implements IProjetService{
         return projetRepository.save(projet);
     }
 
+    @Override
+    public List<Projet> findByProjetDetailTechnologieLike(String technologie) {
+        return projetRepository.findByProjetDetailTechnologieLike(technologie);
+    }
+
+    @Override
+    public List<Projet> findByEquipe(Long idEquipe) {
+        return projetRepository.findByEquipesIdEquipe(idEquipe);
+    }
+
+    @Override
+    public List<Projet> findByCoutAndTechnologie(Long cout, String technologie) {
+        return projetRepository.findByCoutAndTechnologie(cout, technologie);
+    }
+
 
 }

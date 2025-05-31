@@ -18,18 +18,21 @@ import java.util.Set;
 public class Equipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id_Equipe;
+    long idEquipe;
     String nom;
     Domaine domaine;
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     Set<Projet> projet = new HashSet<Projet>();
 
+    @ManyToOne
+    Entreprise entreprise;
+
     public long getId_Equipe() {
-        return id_Equipe;
+        return idEquipe;
     }
 
-    public void setId_Equipe(long id_Equipe) {
-        this.id_Equipe = id_Equipe;
+    public void setId_Equipe(long idEquipe) {
+        this.idEquipe = idEquipe;
     }
 
     public String getNom() {

@@ -57,6 +57,15 @@ public class EquipeServiceImplementation implements IEquipeService{
 
     }
 
+    @Override
+    public List<Equipe> findByNomAndProjetProjetDetailDescription(String nom, String Description) {
+        return equipeRepository.findByNomAndProjetProjetDetailDescription(nom, Description);
+    }
+
+    @Override
+    public List<Equipe> findBytchnologieAndDateDebut(String technologie) {
+        return equipeRepository.findBytchnologieAndDateDebut(technologie);
+    }
 
 
 }

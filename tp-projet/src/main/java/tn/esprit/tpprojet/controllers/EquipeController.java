@@ -50,4 +50,13 @@ public class EquipeController {
         equipeService.desaffecterProjetFromEquipe(projetId, equipeId);
 
     }
+
+    @GetMapping("/findByNomAndProjetProjetDetailDescription/{nom}/{description}")
+    List<Equipe> findByNomAndProjetProjetDetailDescription(@PathVariable String nom, @PathVariable String description) {
+        return equipeService.findByNomAndProjetProjetDetailDescription(nom, description);
+    }
+    @GetMapping("/findBytchnologieAndDateDebut/{technologie}")
+    List<Equipe> findBytchnologieAndDateDebut(@PathVariable String technologie){
+        return equipeService.findBytchnologieAndDateDebut(technologie);
+    }
 }

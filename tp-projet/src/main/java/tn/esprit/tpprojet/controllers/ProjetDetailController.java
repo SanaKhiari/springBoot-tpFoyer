@@ -1,5 +1,6 @@
 package tn.esprit.tpprojet.controllers;
 
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.tpprojet.entities.Equipe;
@@ -40,4 +41,16 @@ public class ProjetDetailController {
     void deleteBloc(@PathVariable long id) {
         projetDetailService.deleteProjetDeatilById(id);
     }
+
+    @GetMapping("/finfByTechnologieLike/{technologie}")
+    List<ProjetDetail> finfByTechnologieLike(@RequestParam String technologie) {
+        return projetDetailService.findByTechnologieLike(technologie);
+    }
+
+    @GetMapping("/finfByTechnologieContains/{technologie}")
+    List<ProjetDetail> finfByTechnologieContains(@RequestParam String technologie) {
+        return projetDetailService.findByTechnologieContains(technologie);
+    }
+
+
 }

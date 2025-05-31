@@ -10,4 +10,6 @@ public interface IProjetDetailService {
     List<ProjetDetail> retrieveAllProjetDetails();
     ProjetDetail retriveProjetDetailById(long id);
     void deleteProjetDeatilById(long id);
+    List<ProjetDetail> findByTechnologieLike(String technologie);
+    List<ProjetDetail> findByTechnologieContains(String technologie);
 }

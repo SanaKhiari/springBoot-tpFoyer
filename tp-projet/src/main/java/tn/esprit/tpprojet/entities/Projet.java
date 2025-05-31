@@ -17,7 +17,7 @@ import java.util.Set;
 public class Projet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id_projet;
+    long idprojet;
     String sujet;
     //@OneToOne (mappedBy = "projet")
     @OneToOne(cascade = CascadeType.ALL)
@@ -28,11 +28,11 @@ public class Projet {
     Set<Equipe> equipes;
 
     public long getId_projet() {
-        return id_projet;
+        return idprojet;
     }
 
-    public void setId_projet(long id_projet) {
-        this.id_projet = id_projet;
+    public void setId_projet(long idprojet) {
+        this.idprojet = idprojet;
     }
 
     public String getSujet() {

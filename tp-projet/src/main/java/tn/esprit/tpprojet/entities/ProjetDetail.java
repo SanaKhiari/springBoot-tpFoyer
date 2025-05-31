@@ -18,7 +18,7 @@ import java.util.Date;
 public class ProjetDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id_projetDetail;
+    long idprojetDetail;
     String description;
     String technologie;
     long cout;
@@ -29,11 +29,11 @@ public class ProjetDetail {
     Projet projet;
 
     public long getId_projetDetail() {
-        return id_projetDetail;
+        return idprojetDetail;
     }
 
-    public void setId_projetDetail(long id_projetDetail) {
-        this.id_projetDetail = id_projetDetail;
+    public void setId_projetDetail(long idprojetDetail) {
+        this.idprojetDetail = idprojetDetail;
     }
 
     public String getDescription() {
